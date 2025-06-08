@@ -1,0 +1,332 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Front-End Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+        :root {
+        --color-primary: #111827;
+        --color-secondary: #6b7280;
+        --color-accent: #000000;
+        --bg-light: #ffffff;
+        --border-radius: 0.75rem;
+        --transition-speed: 0.3s;
+        --badge-bg: #e0e7ff;
+        --badge-color: #3730a3;
+        --btn-bg: #000;
+        --btn-hover-bg: #2563eb;
+        }
+
+        body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-light);
+        color: var(--color-secondary);
+        margin: 0;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5 {
+        color: var(--color-primary);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        }
+        h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+        text-align: center;
+        }
+        p {
+        color: var(--color-secondary);
+        font-size: 1.125rem;
+        }
+        a {
+        color: var(--color-accent);
+        text-decoration: none;
+        transition: color var(--transition-speed);
+        }
+        a:hover, a:focus {
+        color: var(--btn-hover-bg);
+        text-decoration: none;
+        }
+        .navbar {
+        box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+        backdrop-filter: saturate(180%) blur(10px);
+        background-color: rgba(255 255 255 / 0.9) !important;
+        transition: background-color var(--transition-speed);
+        }
+        .navbar-brand {
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        }
+        .navbar-nav .nav-link {
+        font-weight: 600;
+        color: var(--color-secondary);
+        transition: color var(--transition-speed);
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+        color: var(--btn-hover-bg);
+        }
+        .container-main {
+        max-width: 1200px;
+        margin: 0 auto 4rem auto;
+        padding: 0 1rem;
+        }
+        .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+        }
+        .project-card {
+        background: #fff;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px rgb(0 0 0 / 0.05);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 40px rgb(0 0 0 / 0.1);
+        }
+        .project-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 1px solid #e5e7eb;
+        flex-shrink: 0;
+        }
+        .project-content {
+        flex-grow: 1;
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        }
+        .project-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        margin-bottom: 0.75rem;
+        }
+        .tech-badges {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        color: var(--badge-color);
+        }
+        .tech-badge {
+        background: var(--badge-bg);
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.7rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        user-select: none;
+        transition: background-color var(--transition-speed);
+        }
+        .tech-badge:hover, .tech-badge:focus {
+        background-color: #c7d2fe;
+        outline: none;
+        cursor: default;
+        }
+        .btn-group {
+        margin-top: auto;
+        display: flex;
+        gap: 1rem;
+        }
+        .btn {
+        flex: 1;
+        text-align: center;
+        border-radius: var(--border-radius);
+        font-weight: 700;
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+        user-select: none;
+        transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+        color: #fff;
+        background-color: var(--btn-bg);
+        border: none;
+        display: inline-block;
+        }
+        .btn:hover, .btn:focus {
+        background-color: var(--btn-hover-bg);
+        outline: none;
+        box-shadow: 0 6px 20px rgb(37 99 235 / 0.5);
+        text-decoration: none;
+        color: #fff;
+        }
+
+        footer {
+        background: #f9fafb;
+        padding: 2rem 1rem;
+        text-align: center;
+        color: var(--color-secondary);
+        font-size: 0.875rem;
+        border-top: 1px solid #e5e7eb;
+        }
+
+        @media (min-width: 768px) {
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 5rem;
+        }
+        }
+    </style>
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg sticky-top" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="index.html">FrontendDev</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav fw-semibold">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <main class="container-main" role="main" aria-label="Portfolio Projects">
+        <h1>Portofolio Proyek</h1>
+
+        <section class="cards-grid" aria-live="polite">
+        <article class="project-card" tabindex="0">
+            <img src="galeri/Screenshot 2025-06-07 134859.png" alt="Gambar proyek Website Portofolio" class="project-image" />
+            <div class="project-content">
+            <h2 class="project-title">Website Portofolio</h2>
+            <div class="tech-badges" aria-label="Teknologi yang digunakan">
+                <span class="tech-badge" tabindex="0">HTML</span>
+                <span class="tech-badge" tabindex="0">CSS</span>
+                <span class="tech-badge" tabindex="0">JavaScript</span>
+                <span class="tech-badge" tabindex="0">Bootstrap 5</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://demo.example.com/portfolio" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat demo Website Portofolio">Demo</a>
+                <a href="https://github.com/username/portfolio" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat kode di GitHub Website Portofolio">GitHub</a>
+            </div>
+            </div>
+        </article>
+
+        <article class="project-card" tabindex="0">
+            <img src="galeri/Screenshot 2025-06-07 134859.png" alt="Gambar proyek Aplikasi Todo List" class="project-image" />
+            <div class="project-content">
+            <h2 class="project-title">Aplikasi Todo List</h2>
+            <div class="tech-badges" aria-label="Teknologi yang digunakan">
+                <span class="tech-badge" tabindex="0">React</span>
+                <span class="tech-badge" tabindex="0">JavaScript</span>
+                <span class="tech-badge" tabindex="0">CSS Modules</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://demo.example.com/todo" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat demo Aplikasi Todo List">Demo</a>
+                <a href="https://github.com/username/todo-app" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat kode di GitHub Aplikasi Todo List">GitHub</a>
+            </div>
+            </div>
+        </article>
+
+        <article class="project-card" tabindex="0">
+            <img src="galeri/Screenshot 2025-06-07 134859.png" alt="Gambar proyek Blog Pribadi" class="project-image" />
+            <div class="project-content">
+            <h2 class="project-title">Blog Pribadi</h2>
+            <div class="tech-badges" aria-label="Teknologi yang digunakan">
+                <span class="tech-badge" tabindex="0">Next.js</span>
+                <span class="tech-badge" tabindex="0">React</span>
+                <span class="tech-badge" tabindex="0">Tailwind CSS</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://demo.example.com/blog" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat demo Blog Pribadi">Demo</a>
+                <a href="https://github.com/username/blog" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat kode di GitHub Blog Pribadi">GitHub</a>
+            </div>
+            </div>
+        </article>
+
+        <article class="project-card" tabindex="0">
+            <img src="galeri/Screenshot 2025-06-07 134859.png" alt="Gambar proyek Dashboard Admin" class="project-image" />
+            <div class="project-content">
+            <h2 class="project-title">Dashboard Admin</h2>
+            <div class="tech-badges" aria-label="Teknologi yang digunakan">
+                <span class="tech-badge" tabindex="0">Vue.js</span>
+                <span class="tech-badge" tabindex="0">JavaScript</span>
+                <span class="tech-badge" tabindex="0">Bootstrap 5</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://demo.example.com/dashboard" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat demo Dashboard Admin">Demo</a>
+                <a href="https://github.com/username/dashboard" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat kode di GitHub Dashboard Admin">GitHub</a>
+            </div>
+            </div>
+        </article>
+
+        <article class="project-card" tabindex="0">
+            <img src="galeri/Screenshot 2025-06-07 134859.png" alt="Gambar proyek Dashboard Admin" class="project-image" />
+            <div class="project-content">
+            <h2 class="project-title">Dashboard Admin</h2>
+            <div class="tech-badges" aria-label="Teknologi yang digunakan">
+                <span class="tech-badge" tabindex="0">Vue.js</span>
+                <span class="tech-badge" tabindex="0">JavaScript</span>
+                <span class="tech-badge" tabindex="0">Bootstrap 5</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://demo.example.com/dashboard" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat demo Dashboard Admin">Demo</a>
+                <a href="https://github.com/username/dashboard" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat kode di GitHub Dashboard Admin">GitHub</a>
+            </div>
+            </div>
+        </article>
+
+        <article class="project-card" tabindex="0">
+            <img src="galeri/Screenshot 2025-06-07 134859.png" alt="Gambar proyek Dashboard Admin" class="project-image" />
+            <div class="project-content">
+            <h2 class="project-title">Dashboard Admin</h2>
+            <div class="tech-badges" aria-label="Teknologi yang digunakan">
+                <span class="tech-badge" tabindex="0">Vue.js</span>
+                <span class="tech-badge" tabindex="0">JavaScript</span>
+                <span class="tech-badge" tabindex="0">Bootstrap 5</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://demo.example.com/dashboard" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat demo Dashboard Admin">Demo</a>
+                <a href="https://github.com/username/dashboard" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Lihat kode di GitHub Dashboard Admin">GitHub</a>
+            </div>
+            </div>
+        </article>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Muhammad Abil. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>

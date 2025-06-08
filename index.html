@@ -1,0 +1,237 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Front-End Developer Company Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+        :root {
+        --color-primary: #111827;
+        --color-secondary: #6b7280;
+        --color-accent: #000000;
+        --bg-light: #ffffff;
+        --border-radius: 0.75rem;
+        --transition-speed: 0.3s;
+        }
+
+        body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-light);
+        color: var(--color-secondary);
+        margin: 0;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5 {
+        color: var(--color-primary);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        }
+        h1 {
+        font-size: 3.2rem;
+        font-weight: 800;
+        line-height: 1.1;
+        }
+        h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        }
+        p {
+        color: var(--color-secondary);
+        font-size: 1.125rem;
+        }
+        a {
+        color: var(--color-accent);
+        text-decoration: none;
+        transition: color var(--transition-speed);
+        }
+        a:hover, a:focus {
+        color: #2563eb;
+        text-decoration: none;
+        }
+        .navbar {
+        box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+        backdrop-filter: saturate(180%) blur(10px);
+        background-color: rgba(255 255 255 / 0.9) !important;
+        transition: background-color var(--transition-speed);
+        }
+        .navbar-brand {
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        }
+        .navbar-nav .nav-link {
+        font-weight: 600;
+        color: var(--color-secondary);
+        transition: color var(--transition-speed);
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+        color: #2563eb;
+        }
+        .btn-primary {
+        background: var(--color-accent);
+        border: none;
+        font-weight: 700;
+        padding: 0.75rem 2.5rem;
+        border-radius: var(--border-radius);
+        transition: background-color var(--transition-speed);
+        color: #fff;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 0.12);
+        }
+        .btn-primary:hover, .btn-primary:focus {
+        background-color: #2563eb;
+        outline: none;
+        box-shadow: 0 6px 20px rgb(37 99 235 / 0.5);
+        color: #fff;
+        }
+        .hero-section {
+        padding: 5rem 1rem 4rem 1rem;
+        text-align: center;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .hero-subtext {
+        margin-top: 1.25rem;
+        font-size: 1.25rem;
+        color: var(--color-secondary);
+        font-weight: 500;
+        line-height: 1.5;
+        }
+        .summary-section {
+        padding: 6rem 1rem 6rem 1rem;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        .summary-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 2rem;
+        }
+        .summary-card {
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        padding: 2.5rem 2rem;
+        background: #fff;
+        transition: transform var(--transition-speed);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        }
+        .summary-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        }
+        .card-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1rem;
+        stroke: #2563eb;
+        stroke-width: 2;
+        fill: none;
+        }
+        footer {
+        background: #f9fafb;
+        padding: 2rem 1rem;
+        text-align: center;
+        color: var(--color-secondary);
+        font-size: 0.875rem;
+        border-top: 1px solid #e5e7eb;
+        }
+
+        @media (min-width: 768px) {
+        h1 {
+            font-size: 4rem;
+        }
+        .hero-subtext {
+            font-size: 1.5rem;
+        }
+        .hero-section {
+            padding-top: 6rem;
+            padding-bottom: 5rem;
+        }
+        .summary-section {
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+        }
+    </style>
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+        <a class="navbar-brand" href="index.html">FrontendDev</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav fw-semibold">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section" role="banner" aria-label="Introduction">
+        <h1>Muhammad Abil</h1>
+        <p class="hero-subtext">Front-End Developer</p>
+        <a href="portfolio.html" class="btn btn-primary mt-4" role="button" aria-label="Lihat Portofolio">Lihat Portofolio</a>
+        </section>
+
+        <section class="summary-section" aria-label="About me and skills summary">
+        <h2 class="text-center mb-5">Tentang Saya dan Keahlian</h2>
+        <div class="summary-cards">
+            <article class="summary-card" tabindex="0">
+            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 15h3v-2h-3Zm-4-5.5a2.5 2.5 0 1 1 2.5-2.5a2.5 2.5 0 0 1-2.5 2.5Zm-3 7H7v-3H6Zm8 0h1v-3h-1Z"/></svg>
+            <h3>Responsive Design</h3>
+            <p>Membuat antarmuka yang mulus dan dapat bekerja di semua perangkat.</p>
+            </article>
+            <article class="summary-card" tabindex="0">
+            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+            <h3>HTML, CSS & JavaScript</h3>
+            <p>Kuasa penuh atas teknologi inti front-end yang modern dan praktis.</p>
+            </article>
+            <article class="summary-card" tabindex="0">
+            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="6" width="12" height="12" rx="3"/></svg>
+            <h3>Bootstrap 5 Expert</h3>
+            <p>Menghasilkan desain yang responsif dan profesional dengan framework CSS modern.</p>
+            </article>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Muhammad Abil. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+

@@ -1,0 +1,347 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Front-End Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+        :root {
+        --color-primary: #111827;
+        --color-secondary: #6b7280;
+        --color-accent: #000000;
+        --bg-light: #ffffff;
+        --border-radius: 0.75rem;
+        --transition-speed: 0.3s;
+        --input-bg: #f9fafb;
+        --input-border: #d1d5db;
+        --input-focus-border: #2563eb;
+        --btn-bg: #000;
+        --btn-hover-bg: #2563eb;
+        }
+
+        body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-light);
+        color: var(--color-secondary);
+        margin: 0;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5 {
+        color: var(--color-primary);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        }
+        h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        }
+        p {
+        color: var(--color-secondary);
+        font-size: 1.125rem;
+        }
+
+        a {
+        color: var(--color-accent);
+        text-decoration: none;
+        transition: color var(--transition-speed);
+        }
+        a:hover, a:focus {
+        color: var(--btn-hover-bg);
+        text-decoration: none;
+        }
+
+        .navbar {
+        box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+        backdrop-filter: saturate(180%) blur(10px);
+        background-color: rgba(255 255 255 / 0.9) !important;
+        transition: background-color var(--transition-speed);
+        }
+        .navbar-brand {
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        }
+        .navbar-nav .nav-link {
+        font-weight: 600;
+        color: var(--color-secondary);
+        transition: color var(--transition-speed);
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+        color: var(--btn-hover-bg);
+        }
+
+        main {
+        max-width: 900px;
+        margin: 0 auto 5rem auto;
+        padding: 0 1rem;
+        }
+
+        form {
+        background: #fff;
+        padding: 2.5rem 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        margin-bottom: 3rem;
+        }
+        .form-floating > label {
+        font-weight: 600;
+        color: var(--color-secondary);
+        }
+        .form-control {
+        background-color: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-radius: var(--border-radius);
+        transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+        font-size: 1rem;
+        padding: 1rem 1rem 0.5rem 1rem;
+        height: auto;
+        color: var(--color-primary);
+        }
+        .form-control:focus {
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+        outline: none;
+        background-color: #fff;
+        }
+        .form-control:invalid {
+        border-color: #dc2626;
+        }
+        .form-control:invalid:focus {
+        box-shadow: 0 0 6px #dc2626;
+        }
+
+        .btn-submit {
+        background-color: var(--btn-bg);
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        padding: 0.75rem 2.5rem;
+        border-radius: var(--border-radius);
+        transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+        cursor: pointer;
+        user-select: none;
+        }
+        .btn-submit:hover, .btn-submit:focus {
+        background-color: var(--btn-hover-bg);
+        outline: none;
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+
+        .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        margin-bottom: 3rem;
+        background: #fff;
+        padding: 2rem 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        }
+        .contact-info h2 {
+        margin-bottom: 1rem;
+        }
+        .contact-info a, .contact-info p {
+        font-weight: 600;
+        color: var(--color-primary);
+        font-size: 1.125rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        }
+        .contact-info a:hover, .contact-info a:focus {
+        color: var(--btn-hover-bg);
+        text-decoration: none;
+        }
+        .icon {
+        width: 24px;
+        height: 24px;
+        stroke: var(--color-primary);
+        stroke-width: 2;
+        fill: none;
+        }
+
+        .map-wrapper {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        margin-bottom: 5rem;
+        height: 320px;
+        }
+        .map-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        }
+
+        @media (min-width: 768px) {
+        .contact-info {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        main {
+            margin-bottom: 6rem;
+        }
+        }
+    </style>
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg sticky-top" role="navigation">
+        <div class="container">
+        <a class="navbar-brand" href="index.html">FrontendDev</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav fw-semibold">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <main role="main" class="px-3">
+        <h1>Contact Me</h1>
+
+        <form id="contactForm" novalidate aria-label="Contact form">
+        <div class="form-floating mb-4">
+            <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Nama"
+            required
+            aria-required="true"
+            aria-describedby="nameHelp"
+            />
+            <label for="name">Nama</label>
+            <div class="invalid-feedback">Harap masukkan nama Anda.</div>
+        </div>
+        <div class="form-floating mb-4">
+            <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+            aria-required="true"
+            aria-describedby="emailHelp"
+            />
+            <label for="email">Email</label>
+            <div class="invalid-feedback">Harap masukkan alamat email yang valid.</div>
+        </div>
+        <div class="form-floating mb-4">
+            <textarea
+            class="form-control"
+            placeholder="Pesan Anda"
+            id="message"
+            name="message"
+            style="height: 140px"
+            required
+            aria-required="true"
+            aria-describedby="messageHelp"
+            ></textarea>
+            <label for="message">Pesan</label>
+            <div class="invalid-feedback">Harap masukkan pesan Anda.</div>
+        </div>
+        <button type="submit" class="btn-submit" aria-label="Kirim Pesan">Kirim Pesan</button>
+        </form>
+
+        <section class="contact-info" aria-label="Contact information">
+        <div>
+            <h2>Email</h2>
+            <a href="mailto:namaemail@example.com" aria-label="Email: namaemail@example.com">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M21 19H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2Z"/>
+            </svg>
+            mhmmdabil828@gmail.com
+            </a>
+        </div>
+
+        <div>
+            <h2>Sosial Media</h2>
+            <a href="https://x.com/muhanmadabil?s=21" target="_blank" rel="noopener noreferrer" aria-label="Twitter profile">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14.86 4.48 4.48 0 0 0 1.98-2.48 9.2 9.2 0 0 1-2.91 1.1 4.52 4.52 0 0 0-7.71 4.12A12.87 12.87 0 0 1 2 4.8a4.52 4.52 0 0 0 1.4 6.04 4.47 4.47 0 0 1-2.05-.57v.05a4.52 4.52 0 0 0 3.63 4.43 4.5 4.5 0 0 1-2.04.08 4.52 4.52 0 0 0 4.21 3.14A9.10 9.10 0 0 1 1 19.54 12.88 12.88 0 0 0 7 21c8.3 0 12.85-6.88 12.85-12.85q0-.29 0-.57A9.18 9.18 0 0 0 23 3Z"/>
+            </svg>
+            Twitter
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-abil-08377536a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-12h4v2a4 4 0 0 1 4-2zM2 9h4v12H2zm2-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+            </svg>
+            LinkedIn
+            </a>
+            <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48 0-.24 0-.87 0-1.71-2.77.6-3.36-1.3-3.36-1.3a2.63 2.63 0 0 0-1.1-1.46c-.9-.62.07-.6.07-.6a2.06 2.06 0 0 1 1.5 1 2.08 2.08 0 0 0 2.83.8 2.13 2.13 0 0 1 .63-1.33c-2.22-.25-4.56-1.11-4.56-4.93a3.85 3.85 0 0 1 1-2.68 3.59 3.59 0 0 1 .1-2.63s.84-.27 2.75 1a9.22 9.22 0 0 1 5 0c1.9-1.27 2.74-1 2.74-1a3.62 3.62 0 0 1 .1 2.63 3.85 3.85 0 0 1 1 2.69c0 3.84-2.34 4.67-4.57 4.92a2.38 2.38 0 0 1 .68 1.85c0 1.34 0 2.42 0 2.75 0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/>
+            </svg>
+            GitHub
+            </a>
+        </div>
+        </section>
+
+        <section class="map-wrapper" aria-label="Google Maps location">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0333603256917!2d106.81759331467996!3d-6.243563462515417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3b9303a1b1b%3A0x2209b122c6d8068f!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1696452012345!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Google Maps"
+        ></iframe>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Muhammad Abil. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (() => {
+        'use strict'
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+        })();
+    </script>
+    </body>
+    </html>
+
